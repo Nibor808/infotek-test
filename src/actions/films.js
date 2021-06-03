@@ -1,7 +1,9 @@
 import swapi from '../apis/swapi';
-import { FETCH_FILM, FILMS_ERROR } from '../reducers/filmsReducer';
+import { CLEAR_FILMS, FETCH_FILM, FILMS_ERROR } from '../reducers/filmsReducer';
 
 export const fetchFilm = id => async dispatch => {
+  dispatch({ type: CLEAR_FILMS });
+
   try {
     const { data } = await swapi.get(`/films/${id}`);
 

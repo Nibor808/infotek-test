@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchFilm } from '../actions/films';
-import { CLEAR_FILMS } from '../reducers/filmsReducer';
 import ProgressBar from './ProgressBar';
 
 const Films = ({ character }) => {
@@ -19,8 +18,6 @@ const Films = ({ character }) => {
     });
 
     setFilmIds(ids);
-
-    dispatch({ type: CLEAR_FILMS });
   }, [dispatch, character]);
 
   useEffect(() => {

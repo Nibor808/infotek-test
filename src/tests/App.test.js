@@ -9,6 +9,7 @@ const INITIAL_STATE = {
   },
   films: {
     allFilms: [],
+    character: {},
   },
 };
 
@@ -26,6 +27,7 @@ const STATE_WITH_VALUES = {
         title: 'A New Hope',
       },
     ],
+    character: { name: 'Luke Skywalker', films: [] },
   },
 };
 
@@ -48,13 +50,15 @@ test('renders People', () => {
 });
 
 test('renders ProgressBar in Films when there are no films', () => {
-  render(<Films character={{ name: 'Luke', films: [] }} />);
+  render(<Films character={{ name: 'Luke Skywalker', films: [] }} />, {
+    initialState: INITIAL_STATE,
+  });
   const title = screen.getByTestId('progress-bar');
   expect(title).toBeInTheDocument();
 });
 
 test('renders Films', () => {
-  render(<Films character={{ name: 'Luke', films: [] }} />, {
+  render(<Films character={{ name: 'Luke Skywalker', films: [] }} />, {
     initialState: STATE_WITH_VALUES,
   });
   const title = screen.getByTestId('film-div');
