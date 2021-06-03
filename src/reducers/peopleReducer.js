@@ -1,17 +1,17 @@
 export const FETCH_PEOPLE = 'FETCH_PEOPLE';
-export const FETCH_ERROR = 'FETCH_ERROR';
+export const PEOPLE_ERROR = 'PEOPLE_ERROR';
 
 const INITIAL_STATE = {
-  people: [],
-  fetchError: '',
+  allPeople: [],
+  peopleError: '',
 };
 
 const peopleReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case FETCH_PEOPLE:
-      return { ...state, people: action.payload };
-    case FETCH_ERROR:
-      return { ...state, fetchError: action.payload };
+      return { ...state, allPeople: action.payload };
+    case PEOPLE_ERROR:
+      return { ...state, peopleError: action.payload };
     default:
       return state;
   }

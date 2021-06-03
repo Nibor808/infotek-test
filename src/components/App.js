@@ -1,9 +1,11 @@
 import React from 'react';
+import People from './People';
 
 function App() {
   return (
     <div className='container'>
-      <h1>App</h1>
+      <h1>Star Wars</h1>
+      <People />
     </div>
   );
 }

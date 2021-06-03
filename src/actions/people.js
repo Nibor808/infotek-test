@@ -1,5 +1,5 @@
 import swapi from '../apis/swapi';
-import { FETCH_ERROR, FETCH_PEOPLE } from '../reducers/peopleReducer';
+import { FETCH_PEOPLE, PEOPLE_ERROR } from '../reducers/peopleReducer';
 
 export const fetchPeople = () => async dispatch => {
   try {
@@ -7,11 +7,11 @@ export const fetchPeople = () => async dispatch => {
 
     dispatch({
       type: FETCH_PEOPLE,
-      payload: data,
+      payload: data.results,
     });
   } catch (err) {
     dispatch({
-      type: FETCH_ERROR,
+      type: PEOPLE_ERROR,
       payload: err.message,
     });
   }
