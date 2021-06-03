@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchFilm } from '../actions/films';
+import { CLEAR_FILMS } from '../reducers/filmsReducer';
 import ProgressBar from './ProgressBar';
 
 const Films = ({ character }) => {
   const dispatch = useDispatch();
   const [filmIds, setFilmIds] = useState([]);
-  const error = useSelector(state => state.people.filmsError);
+  const error = useSelector(state => state.films.filmsError);
   const result = useSelector(state => state.films.allFilms);
   result?.sort(
     (a, b) => Date.parse(a.release_date) - Date.parse(b.release_date)
@@ -18,7 +19,9 @@ const Films = ({ character }) => {
     });
 
     setFilmIds(ids);
-  }, [character]);
+
+    dispatch({ type: CLEAR_FILMS });
+  }, [dispatch, character]);
 
   useEffect(() => {
     filmIds.forEach(id => dispatch(fetchFilm(id)));

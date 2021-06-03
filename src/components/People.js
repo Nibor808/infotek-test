@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Films from './Films';
-import { CLEAR_FILMS } from '../reducers/filmsReducer';
+import { CHARACTER } from '../reducers/filmsReducer';
 import { fetchPeople } from '../actions/people';
 import ProgressBar from './ProgressBar';
 
 const People = () => {
   const dispatch = useDispatch();
-  const [character, setCharacter] = useState({});
   const result = useSelector(state => state.people.allPeople);
   const error = useSelector(state => state.people.peopleError);
 
@@ -15,18 +13,18 @@ const People = () => {
     dispatch(fetchPeople());
   }, [dispatch]);
 
-  const handleClick = person => {
-    setCharacter(person);
-
-    if (person.name !== character.name) {
-      dispatch({ type: CLEAR_FILMS });
-    }
-  };
-
   const renderResults = () => {
     return result.map(person => {
       return (
-        <li key={person.name} onClick={() => handleClick(person)}>
+        <li
+          key={person.name}
+          onClick={() =>
+            dispatch({
+              type: CHARACTER,
+              payload: person,
+            })
+          }
+        >
           {person.name}
         </li>
       );
@@ -54,8 +52,6 @@ const People = () => {
           </ul>
         </div>
       </div>
-
-      {Object.keys(character).length ? <Films character={character} /> : null}
     </div>
   ) : (
     <ProgressBar text='Loading Characters' type='bg-info' />
