@@ -3,10 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import Films from './Films';
 import { CLEAR_FILMS } from '../reducers/filmsReducer';
 import { fetchPeople } from '../actions/people';
+import ProgressBar from './ProgressBar';
 
 const People = () => {
-  const [character, setCharacter] = useState({});
   const dispatch = useDispatch();
+  const [character, setCharacter] = useState({});
   const result = useSelector(state => state.people.allPeople);
   const error = useSelector(state => state.people.peopleError);
 
@@ -54,10 +55,10 @@ const People = () => {
         </div>
       </div>
 
-      {character ? <Films character={character} /> : null}
+      {Object.keys(character).length ? <Films character={character} /> : null}
     </div>
   ) : (
-    <div>Loading...</div>
+    <ProgressBar text='Loading Characters' type='bg-info' />
   );
 };
 
