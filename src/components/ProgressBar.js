@@ -4,7 +4,7 @@ const ProgressBar = ({ text, type }) => {
   const klass = `progress-bar progress-bar-striped progress-bar-animated ${type}`;
 
   return (
-    <div className='progress'>
+    <div className='progress' data-testid='progress-bar'>
       <div
         className={klass}
         role='progressbar'

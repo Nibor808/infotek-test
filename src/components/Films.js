@@ -28,10 +28,10 @@ const Films = ({ character }) => {
     const lastMovie = result[result.length - 1];
 
     return (
-      <div className='movie-div'>
+      <div className='film-div' data-testid='film-div'>
         {error ? <div className='error'>{error}</div> : null}
 
-        <div className='movie-list'>
+        <div className='film-list'>
           <p>List of Movies:</p>
           <ul>
             {result.map((film, index) => {

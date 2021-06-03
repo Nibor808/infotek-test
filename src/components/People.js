@@ -34,7 +34,7 @@ const People = () => {
   };
 
   return result.length ? (
-    <div>
+    <div className='people-div' data-testid='people-div'>
       {error ? <div className='error'>{error}</div> : null}
 
       <div className='character-list'>

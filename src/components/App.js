@@ -4,7 +4,7 @@ import People from './People';
 function App() {
   return (
     <div className='container'>
-      <h1>Star Wars</h1>
+      <h1 data-testid='app-title'>Star Wars</h1>
       <People />
     </div>
   );
