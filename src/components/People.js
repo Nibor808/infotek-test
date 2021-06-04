@@ -37,7 +37,7 @@ const People = () => {
       {error ? <div className='error'>{error}</div> : null}
 
       <div className='character-list'>
-        <p>Characters:</p>
+        <h5>Characters:</h5>
         <div className='dropdown'>
           <button
             className='btn btn-default dropdown-toggle'

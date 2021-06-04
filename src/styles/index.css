@@ -12,6 +12,10 @@ body {
   min-height: 100%;
 }
 
+html {
+  font-size: 16px;
+}
+
 header {
   padding: 20px 0;
   margin-bottom: var(--rootMargin);
@@ -49,10 +53,6 @@ header > h1 {
 .character:hover {
   cursor: pointer;
   background: lightblue;
-}
-
-.character-list > p {
-  margin-bottom: 5px;
 }
 
 .film-div {

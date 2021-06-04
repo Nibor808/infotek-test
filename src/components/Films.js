@@ -34,7 +34,7 @@ const Films = () => {
       <div className='film-div' data-testid='film-div'>
         {error ? <div className='error'>{error}</div> : null}
 
-        <p>List of Movies for {character.name}:</p>
+        <h5>List of Movies for {character.name}:</h5>
         <ul className='film-list'>
           {result.map((film, index) => {
             return <li key={index}>{film.title}</li>;
