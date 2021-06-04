@@ -8,7 +8,10 @@ function App() {
 
   return (
     <div className='container'>
-      <h1 data-testid='app-title'>Star Wars</h1>
+      <header>
+        <h1 data-testid='app-title'>Star Wars</h1>
+      </header>
+
       <People />
       {Object.keys(character).length ? <Films character={character} /> : null}
     </div>

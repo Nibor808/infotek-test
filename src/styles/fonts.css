@@ -21,3 +21,7 @@ body {
   font-family: roboto-lt, sans-serif;
   letter-spacing: 0.75px;
 }
+
+header > h1 {
+  color: white;
+}

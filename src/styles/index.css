@@ -12,6 +12,16 @@ body {
   min-height: 100%;
 }
 
+header {
+  padding: 20px 0;
+  margin-bottom: var(--rootMargin);
+  background: url("./star-wars-st.jpeg");
+}
+
+header > h1 {
+  margin-left: 10px;
+}
+
 .progress {
   width: var(--rootWidth);
   margin-top: var(--rootMargin);
@@ -71,5 +81,9 @@ body {
   .film-list,
   .progress {
     width: calc(var(--rootWidth) + 30%);
+  }
+
+  header {
+    background: url('./star-wars-st-sm.jpeg');
   }
 }
