@@ -31,7 +31,7 @@ const Films = ({ character }) => {
       <div className='film-div' data-testid='film-div'>
         {error ? <div className='error'>{error}</div> : null}
 
-        <p>List of Movies:</p>
+        <p>List of Movies for {character.name}:</p>
         <ul className='film-list'>
           {result.map((film, index) => {
             return <li key={index}>{film.title}</li>;
@@ -39,9 +39,9 @@ const Films = ({ character }) => {
         </ul>
 
         <div className='last-appearance'>
-          <p>Name/Year Last Movie:</p>
           <p>
-            {lastMovie.title} - {lastMovie.release_date}
+            The character {character.name} last appeared in {lastMovie.title}{' '}
+            released {lastMovie.release_date}
           </p>
         </div>
       </div>

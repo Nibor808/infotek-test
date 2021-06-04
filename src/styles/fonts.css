@@ -1,0 +1,23 @@
+@font-face {
+  font-family: roboto-lt;
+  src: url('./fonts/Roboto-Light.ttf');
+}
+
+@font-face {
+  font-family: quicksand;
+  src: url('./fonts/Quicksand-Regular.ttf');
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: quicksand, sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.btn {
+  font-family: roboto-lt, sans-serif;
+  letter-spacing: 0.75px;
+}

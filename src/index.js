@@ -5,7 +5,7 @@ import thunk from 'redux-thunk';
 import reducers from './reducers';
 import ReactDOM from 'react-dom';
 import '../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js';
-import './index.css';
+import './styles/index.css';
 import App from './components/App';
 
 const composedEnhancers =

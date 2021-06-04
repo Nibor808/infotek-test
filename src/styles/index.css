@@ -1,4 +1,5 @@
-@import '../node_modules/bootstrap/dist/css/bootstrap.css';
+@import '../../node_modules/bootstrap/dist/css/bootstrap.css';
+@import './fonts.css';
 
 :root {
   --boxShadowSm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -19,11 +20,6 @@ body {
 .dropdown-menu {
   padding-top: 0;
   padding-bottom: 0;
-}
-
-.dropdown-menu > li {
-  display: flex;
-  justify-content: flex-start;
 }
 
 .dropdown-toggle {
@@ -68,6 +64,10 @@ body {
 }
 
 @media screen and (max-width: 414px) {
+  html {
+    font-size: 12px;
+  }
+
   .film-list,
   .progress {
     width: calc(var(--rootWidth) + 30%);
