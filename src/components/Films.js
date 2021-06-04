@@ -3,9 +3,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchFilm } from '../actions/films';
 import ProgressBar from './ProgressBar';
 
-const Films = ({ character }) => {
+const Films = () => {
   const dispatch = useDispatch();
   const [filmIds, setFilmIds] = useState([]);
+  const character = useSelector(state => state.films.character);
   const error = useSelector(state => state.films.filmsError);
   const result = useSelector(state => state.films.allFilms);
   result?.sort(
@@ -13,11 +14,13 @@ const Films = ({ character }) => {
   );
 
   useEffect(() => {
-    const ids = character.films.map(filmUrl => {
-      return filmUrl.substring(filmUrl.length - 2, filmUrl.length - 1);
-    });
+    if (Object.keys(character).length) {
+      const ids = character.films.map(filmUrl => {
+        return filmUrl.substring(filmUrl.length - 2, filmUrl.length - 1);
+      });
 
-    setFilmIds(ids);
+      setFilmIds(ids);
+    }
   }, [dispatch, character]);
 
   useEffect(() => {
@@ -48,11 +51,10 @@ const Films = ({ character }) => {
     );
   };
 
-  return result.length ? (
-    renderList()
-  ) : (
-    <ProgressBar text='Loading Movies' type='bg-success' />
-  );
+  if (result.length) return renderList();
+  else if (Object.keys(character).length)
+    return <ProgressBar text='Loading Movies' type='bg-success' />;
+  else return null;
 };
 
 export default Films;

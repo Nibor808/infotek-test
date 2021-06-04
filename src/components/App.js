@@ -1,11 +1,8 @@
 import React from 'react';
 import People from './People';
 import Films from './Films';
-import { useSelector } from 'react-redux';
 
 function App() {
-  const character = useSelector(state => state.films.character);
-
   return (
     <div className='container'>
       <header>
@@ -13,7 +10,7 @@ function App() {
       </header>
 
       <People />
-      {Object.keys(character).length ? <Films character={character} /> : null}
+      <Films />
     </div>
   );
 }

@@ -49,16 +49,22 @@ test('renders People', () => {
   expect(title).toBeInTheDocument();
 });
 
-test('renders ProgressBar in Films when there are no films', () => {
-  render(<Films character={{ name: 'Luke Skywalker', films: [] }} />, {
-    initialState: INITIAL_STATE,
+test('renders ProgressBar in Films when there is a character but not yet any films', () => {
+  render(<Films />, {
+    initialState: {
+      ...INITIAL_STATE,
+      films: {
+        allFilms: [],
+        character: { name: 'Luke Skywalker ', films: [] },
+      },
+    },
   });
   const title = screen.getByTestId('progress-bar');
   expect(title).toBeInTheDocument();
 });
 
 test('renders Films', () => {
-  render(<Films character={{ name: 'Luke Skywalker', films: [] }} />, {
+  render(<Films />, {
     initialState: STATE_WITH_VALUES,
   });
   const title = screen.getByTestId('film-div');
