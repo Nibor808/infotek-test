@@ -18,6 +18,7 @@ const People = () => {
       return (
         <li
           key={person.name}
+          className='character'
           onClick={() =>
             dispatch({
               type: CHARACTER,
@@ -32,7 +33,7 @@ const People = () => {
   };
 
   return result.length ? (
-    <div className='people-div' data-testid='people-div'>
+    <div className='character-div' data-testid='character-div'>
       {error ? <div className='error'>{error}</div> : null}
 
       <div className='character-list'>
@@ -41,13 +42,13 @@ const People = () => {
           <button
             className='btn btn-default dropdown-toggle'
             type='button'
-            id='characters'
+            id='character-btn'
             data-bs-toggle='dropdown'
             aria-expanded='false'
           >
             Select
           </button>
-          <ul className='dropdown-menu' aria-labelledby='characters'>
+          <ul className='dropdown-menu' aria-labelledby='character-btn'>
             {renderResults()}
           </ul>
         </div>

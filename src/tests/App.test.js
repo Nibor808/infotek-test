@@ -45,7 +45,7 @@ test('renders ProgressBar in People when there is no character', () => {
 
 test('renders People', () => {
   render(<People />, { initialState: STATE_WITH_VALUES });
-  const title = screen.getByTestId('people-div');
+  const title = screen.getByTestId('character-div');
   expect(title).toBeInTheDocument();
 });
 

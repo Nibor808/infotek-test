@@ -1,6 +1,68 @@
 @import '../node_modules/bootstrap/dist/css/bootstrap.css';
 
+:root {
+  --boxShadowSm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --rootMargin: 20px;
+}
+
 html,
 body {
   min-height: 100%;
+}
+
+.progress {
+  width: 30%;
+  margin-top: var(--rootMargin);
+}
+
+.dropdown-menu {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.dropdown-menu > li {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.dropdown-toggle {
+  background: lightgreen;
+  box-shadow: var(--boxShadowSm);
+}
+
+.dropdown-toggle:focus,
+.dropdown-toggle:active {
+  box-shadow: none;
+}
+
+.character {
+  padding: 2px 0 2px 10px;
+}
+
+.character:hover {
+  cursor: pointer;
+  background: lightblue;
+}
+
+.character-list > p {
+  margin-bottom: 5px;
+}
+
+.film-div {
+  margin-top: var(--rootMargin);
+}
+
+.film-list {
+  width: 20%;
+  list-style: none;
+  padding-left: 0;
+}
+
+.film-list > li {
+  border-bottom: 1px solid grey;
+  padding: 2px 0 2px 0;
+}
+
+.last-appearance {
+  margin-top: var(--rootMargin);
 }
